@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小可爱</title>
+    <style>
+        body {
+            display: flex;
+            background-image: url(./photo/yn7.jpg);
+            background-size:400% 400%;
+            perspective: 2000px;
+        }
+
+        .wrapper {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 300px auto 0;
+            position: relative;
+            left: 100px;
+            transform-style: preserve-3d;
+            animation: inifinteRotate 10s infinite linear;
+        }
+
+        .min-box,
+        .max-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            width: 200px;
+            height: 200px;
+            transition: all 2s;
+        }
+
+        .wrapper:hover .max-box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: cover;
+            transition: all 2s;
+            opacity: 0.8;
+        }
+
+        .item1 {
+            background-image: url('./photo/yn5.jpg');
+            transform: translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item1 {
+            transform: translateZ(300px);
+        }
+
+        .item2 {
+            background-image: url('./photo/yn2.jpg');
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item2 {
+            transform: rotateY(90deg) translateZ(300px);
+        }
+
+        .item3 {
+            background-image: url('./photo/yn3.jpg');
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item3 {
+            transform: rotateY(-90deg) translateZ(300px);
+        }
+
+        .item4 {
+            background-image: url('./photo/yn4.jpg');
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item4 {
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        .item5 {
+            background-image: url('./photo/yn6.jpg');
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item5 {
+            transform: rotateX(90deg) translateZ(300px);
+        }
+
+        .item6 {
+            background-image: url('./photo/yn1.jpg');
+            transform: rotatex(-90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item6 {
+            transform: rotateX(-90deg) translateZ(300px);
+        }
+
+        @keyframes inifinteRotate {
+            0% {
+                transform: rotateY(0deg) rotateZ(45deg);
+            }
+
+            100% {
+                transform: rotateY(360deg) rotateZ(45deg);
+            }
+        }
+
+        audio {
+            position: absolute;
+            bottom: -300px;
+            right: 100px;
+        }
+
+        .lyric {
+            font-size: 14px;
+            position: absolute;
+            left: 20px;
+        }
+
+        .lyric::first-letter {
+            font-size: 26px;
+            color: rgb(71, 71, 68);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="min-box">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="max-box">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+    </div>
+    <div class="lyric">
+        <center><h3>永恒之心</h3></center>
+        <p>Every night in my dreams</p>
+        <p>I see you, I feel you</p>
+        <p>That is how I know you go on</p>
+        <p>Far across the distance</p>
+        <p>And spaces between us</p>
+        <p>You have come to show you go on</p>
+        <p>Near, far, wherever you are</p>
+        <p>I believe that the heart does go on</p>
+        <p>Once more you open the door</p>
+        <p>And you're here in my heart</p>
+        <p>And my heart will go on and on</p>
+        <p>Love can touch us one time</p>
+        <p>And last for a lifetime</p>
+        <p>And never let go till we're one</p>
+        <p>Love was when I loved you</p>
+        <p>One true time I hold to</p>
+        <p>In my life we'll always go on</p>
+        <p>Near, far, wherever you are</p>
+        <p>I believe that the heart does go on</p>
+        <p>Once more you open the door</p>
+        <p>And you're here in my heart</p>
+        <p>And my heart will go on and on</p>
+        <p>There is some love that will not go away</p>
+        <p>You're here, there's nothing I fear</p>
+        <p>And I know that my heart will go on</p>
+        <p>We'll stay forever this way</p>
+        <p>You are safe in my heart</p>
+        <p>And my heart will go on and on</p>
+        <br>
+        <p style="font-weight: bold;font-family:16px ;">----------------可爱的你</p>
+    </div>
+    <div></div>
+    <audio controls autoplay loop>
+        <source src="./music/永恒之心.mp3">
+        <embed src="./music/永恒之心.mp3" type="audio">
+    </audio>
+</body>
+
+</html>
