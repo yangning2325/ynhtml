@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f3兄弟</title>
+    <style>
+        body {
+            display: flex;
+            background-image: url(./photo/yn7.jpg);
+            background-size: 200% 200%;
+            perspective: 2000px;
+        }
+
+        .wrapper {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 300px auto 0;
+            position: relative;
+            left: 100px;
+            transform-style: preserve-3d;
+            animation: inifinteRotate 10s infinite linear;
+        }
+
+        .min-box,
+        .max-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            width: 200px;
+            height: 200px;
+            transition: all 2s;
+        }
+
+        .wrapper:hover .max-box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: cover;
+            transition: all 2s;
+            opacity: 0.9;
+        }
+
+        .item1 {
+            background-image: url('./photo/yn5.jpg');
+            transform: translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item1 {
+            transform: translateZ(300px);
+        }
+
+        .item2 {
+            background-image: url('./photo/yn2.jpg');
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item2 {
+            transform: rotateY(90deg) translateZ(300px);
+        }
+
+        .item3 {
+            background-image: url('./photo/yn3.jpg');
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item3 {
+            transform: rotateY(-90deg) translateZ(300px);
+        }
+
+        .item4 {
+            background-image: url('./photo/yn4.jpg');
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item4 {
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        .item5 {
+            background-image: url('./photo/yn6.jpg');
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item5 {
+            transform: rotateX(90deg) translateZ(300px);
+        }
+
+        .item6 {
+            background-image: url('./photo/yn1.jpg');
+            transform: rotatex(-90deg) translateZ(100px);
+        }
+
+        .wrapper:hover .max-box .item6 {
+            transform: rotateX(-90deg) translateZ(300px);
+        }
+
+        @keyframes inifinteRotate {
+            0% {
+                transform: rotateY(0deg) rotateZ(45deg);
+            }
+
+            100% {
+                transform: rotateY(360deg) rotateZ(45deg);
+            }
+        }
+
+        audio {
+            position: absolute;
+            bottom: -300px;
+            right: 100px;
+        }
+
+        .lyric {
+            font-size: 14px;
+            position: absolute;
+            left: 20px;
+        }
+
+        .lyric::first-letter {
+            font-size: 26px;
+            color: rgb(71, 71, 68);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="min-box">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+        <div class="max-box">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+        </div>
+    </div>
+    <div class="lyric">
+        <center>
+            <h3>光阴的故事</h3>
+        </center>
+        <p>春天的花开秋天的风以及冬天的落阳</p>
+        <p>忧郁的青春年少的我曾经无知的这么想</p>
+        <p>风车在四季轮回的歌里它天天的流转</p>
+        <p>风花雪月的诗句里我在年年的成长</p>
+        <p>流水它带走光阴的故事改变了三个人</p>
+        <p>就在那多愁善感而初次等待的青春</p>
+        <p>发黄的相片古老的信以及褪色的圣诞卡</p>
+        <p>年轻时为你写的歌恐怕你早已忘了吧</p>
+        <p>过去的誓言就像那课本里缤纷的书签</p>
+        <p>刻画着多少美丽的诗可是终究是一阵烟</p>
+        <p>流水它带走光阴的故事改变了三个人</p>
+        <p>就在那多愁善感而初次流泪的青春</p>
+        <p>遥远的路程昨日的梦以及远去的笑声</p>
+        <p>再次的见面我们又历经了多少的路程</p>
+        <p>不再是旧日熟悉的我有着旧日狂热的梦</p>
+        <p>也不是旧日熟悉的你有着依然的笑容</p>
+        <p>流水它带走光阴的故事改变了我们</p>
+        <p>就在那多愁善感而初次回忆的青春</p>
+        <p>流水它带走光阴的故事改变了我们</p>
+        <p>就在那多愁善感而初次回忆的青春</p>
+        <br>
+        <p style="font-weight: bold;font-family:16px ;">----------------刘腾飞 王泽平 杨宁</p>
+        　　
+    </div>
+    <div></div>
+    <audio controls autoplay loop>
+        <source src="./music/光阴的故事.mp3">
+        <embed src="./music/光阴的故事.mp3" type="audio">
+    </audio>
+</body>
+
+</html>
