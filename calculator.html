@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height:500px;
+				margin: 100px auto;
+				border: 2px solid brown;
+				background-color:blanchedalmond ;
+				overflow: hidden;
+				font-size: 40px;
+			}
+			#show{
+				width: 258px;
+				height: 70px;
+				background-color:lightgray ;
+				margin: 30px auto;
+				margin-bottom: 20px;
+				overflow: hidden;
+			}
+			#all{
+				text-align: center;
+			}
+
+			button{
+				width: 50px;
+				height: 50px;
+				background-color: greenyellow;
+				font-size: 25px;
+			}
+			.fn{
+				margin-left: 60px;
+
+			}
+			button:hover{
+				background-color:#FF6600;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function () {
+				var num=document.getElementsByClassName("num");
+				var show =document.getElementById("show");
+				var on =document.getElementById("on")
+				var off=document.getElementById("off")
+				var rs=document.getElementById("result");
+				var dele=document.getElementById("dele");
+				/*归0*/
+				on.onclick=function () {
+				 show.innerHTML="0 ";
+				}
+				/*关闭计算器*/
+				off.onclick=function () {
+				 show.innerHTML="";
+				}
+				for (i=0;i<num.length;i++) {
+					num[i].onclick=function(){
+						if(show.innerHTML==""){
+							return;
+						}
+					if(show.innerHTML=="0 "){
+						show.innerHTML=this.value;
+					}
+					/*判断如果输入运算符之后不能继续输入运算符*/
+					else if((show.innerHTML.lastIndexOf("/")==show.innerHTML.length-1&&(this.value=="/"||this.value=="*"||this.value=="-"||this.value=="+"||this.value=="."))
+					||(show.innerHTML.lastIndexOf("*")==show.innerHTML.length-1&&(this.value=="/"||this.value=="*"||this.value=="-"||this.value=="+"||this.value=="."))
+					||(show.innerHTML.lastIndexOf("+")==show.innerHTML.length-1&&(this.value=="/"||this.value=="*"||this.value=="-"||this.value=="+"||this.value=="."))
+					||(show.innerHTML.lastIndexOf("-")==show.innerHTML.length-1&&(this.value=="/"||this.value=="*"||this.value=="-"||this.value=="+"||this.value=="."))
+					||(show.innerHTML.lastIndexOf(".")==show.innerHTML.length-1&&(this.value=="/"||this.value=="*"||this.value=="-"||this.value=="+"||this.value=="."))){
+						show.innerHTML=show.innerHTML+"";
+					}else{
+						show.innerHTML+=this.value;
+						}																
+					}
+				}
+				/*计算结果*/
+				rs.onclick=function () {
+					if(show.innerHTML==""){
+							return;
+						}
+					var res = eval(show.innerHTML)
+					
+					show.innerHTML=res;
+				}
+				/*退格*/
+				dele.onclick=function () {
+					if(show.innerHTML=="0 "){
+						return;
+					}
+					show.innerHTML=show.innerHTML.slice(0,-1);
+					if(show.innerHTML==""){
+							show.innerHTML="0 "
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div style="text-align: center;">
+				<span style="font-size: 25px;color: darkgoldenrod;">沙雕牌计算器</span>
+			</div>
+		  <div id="show">  	
+		  </div>
+			<div id="all">
+				<div class="fn">
+					<button id="off">off</button>
+					<button id="on">on</button>
+					<button id="dele">←</button>
+				</div>
+				<div id="">
+					<button value="7" class="num">7</button>
+					<button value="8" class="num">8</button>
+					<button value="9" class="num">9</button>
+					<button value="/" class="num">÷</button>
+				</div>
+				<div id="">
+					<button value="4" class="num">4</button>
+					<button value="5" class="num">5</button>
+					<button value="6" class="num">6</button>
+					<button value="*" class="num">×</button>
+				</div>
+				<div id="">
+					<button value="1" class="num">1</button>
+					<button value="2" class="num">2</button>
+					<button value="3" class="num">3</button>
+					<button value="-" class="num">-</button>
+				</div>
+				<div id="">
+					<button value="0" class="num">0</button>
+					<button value="." class="num">.</button>
+					<button value="=" id="result">=</button>
+					<button value="+" class="num">+</button>
+				</div>
+
+			</div>
+		 </div>
+	</body>
+</html>
